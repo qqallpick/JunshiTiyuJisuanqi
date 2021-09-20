@@ -1,0 +1,35 @@
+<view class="viewding"></view>
+<view class="liuyanqu">
+  <view class="shurukuang">
+    <textarea placeholder="请输入留言" type="text" maxlength="100" bindconfirm="done" value="{{input_code}}"
+      style="width:650rpx;height:230rpx;float:left;margin-top:10rpx;margin-left:10rpx;   background:#ffffff;overflow:auto;"
+      bindinput="shurukuang"></textarea>
+  </view>
+  <view class="qingkong">
+    <button style="width:175rpx;height:80rpx;border-radius:20rpx;background:#2F4F4F;color:white;font-weight:500;"
+      bindtap="qingkong">清空</button>
+  </view>
+  <view class="fabiao">
+    <button wx:if="{{canIUse && input_code2!=''}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"
+      style="width:470rpx;height:80rpx;border-radius:20rpx;background:#2F4F4F;color:white;font-weight:500;">发表提交</button>
+    <!-- <view wx:else class="qingkong1">请升级微信版本</view>  -->
+    <button wx:elif="{{input_code2==''}}"
+      style="width:470rpx;height:80rpx;border-radius:20rpx;background:#2F4F4F;color:white;font-weight:500;color:#999999">发表提交</button>
+  </view>
+</view>
+<view class="zhanshiqu">
+  <view wx:for="{{datalist}}" wx:key="timevar">
+    <view class="tiezi">
+      <view class="cxxingming">
+        <view class="cxxingming1"> ID：{{item.name}}</view>
+        <view class="shijian1"><text class="shijian2">{{item.bjtimevar}}</text></view>
+        <image class="cxxingming2" src='{{item.touxiang}}'></image>
+      </view>
+      <view class="neirong">{{item.neirong}}</view>
+    </view>
+  </view>
+</view>
+<view class="adContainer">
+  <ad unit-id="adunit-5f4bec8d653d5443" ad-intervals="30" bindload="adLoad" binderror="adError" bindclose="adClose">
+  </ad>
+</view>

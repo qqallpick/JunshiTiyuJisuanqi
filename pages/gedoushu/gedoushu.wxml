@@ -1,0 +1,39 @@
+<view class="biaoti">
+  <view class="biaoti1">格斗术</view>
+</view>
+<view class="gif">
+<image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/gds1.gif" class="gif1"></image></view>
+<view class="wenzit">
+  <view class="wenzi1">第一套 拨挡冲拳，擒臂上勾，顶肘撞膝，击胸砍脖</view>
+</view><view class="gif">
+<image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/gds2.gif" class="gif1"></image></view>
+<view class="wenzi">
+  <view class="wenzi1">第二套 横踢肘击，踹腿跪冲，防刀别臂，双砍弹踢</view>
+</view><view class="gif">
+<image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/gds3.gif" class="gif1"></image></view>
+<view class="wenzi">
+  <view class="wenzi1">第三套 护头蹬腹，挟摔下击，含腿扇掌，抄抱推摔</view>
+</view><view class="gif">
+<image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/gds4.gif" class="gif1"></image></view>
+<view class="wenzi">
+  <view class="wenzi1">第四套 组合连击，正蹬直拳，格挡反弹，侧击插喉</view>
+</view><view class="gif">
+<image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/gds5.gif" class="gif1"></image></view>
+<view class="wenziw">
+  <view class="wenzi1">第五套 提膝直拳，卡喉侧冲，右踹左蹬，直摆侧踹</view>
+</view>
+
+
+<button bindtap="fenxiang" open-type="share"
+  style="width:60rpx;height:65rpx;float:right;margin-top:20rpx;margin-right: 20rpx;   background: #ededed;">
+  <image open-type="share" src="/icon/fenxiang2.png" class="xiangmu1b">
+  </image>
+</button>
+<view class="anniu">
+  <button bindtap="xiazai" size="mini" plain="ture" class="anniu">视频下载</button>
+</view>
+
+
+<view class="adContainer">
+  <ad unit-id="adunit-54b9226f03fb6413" ad-intervals="30" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+</view>

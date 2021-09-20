@@ -1,0 +1,57 @@
+<!-- 图标使用iconfont-->
+<!-- 这一段是别动了，在调整就行了 -->
+<view class="tupian">
+  <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/jinjiepao.jpeg"
+    class="tupian1"></image>
+</view>
+<view class="jindutiao">
+  <view class="progress" style="width:{{progress+0.01}}%"></view>
+</view>
+<view class="audioPlayer">
+  <!-- 语音切换没意义 -->
+  <!-- <view class="btn-switch-accent" bindtap="switchAccent">{{curAccentText}}4444</view> -->
+  <view class="btn-fast-backward" data-flag="-1" bindtap="seekPosition">
+    <!-- <view class="iconfont icon-backward">快退</view> -->
+    <image style="width: 50rpx; height: 50rpx; " mode="scaleToFill" src="{{thumbnail2}}" bindtap="seekPosition"></image>
+  </view>
+  <view class="btn-play">
+    <view class="btn-bg {{isPlay?'roate' :''}}">
+      <image style="width: 100rpx; height: 100rpx; " mode="scaleToFill" src="{{thumbnail}}"></image>
+    </view>
+    <view bindtap="play" wx:if="{{isPlay == false}}">
+      <view class="iconfont icon-caret-right" />
+    </view>
+    <view bindtap="stop" wx:if="{{isPlay == true}}">
+      <view class="iconfont icon-pause" />
+    </view>
+  </view>
+  <view class="btn-fast-backward" data-flag="1" bindtap="seekPosition">
+    <!-- <view class="iconfont icon-forward"></view> -->
+    <image style="width: 50rpx; height: 50rpx; " mode="scaleToFill" src="{{thumbnail3}}" bindtap="seekPosition"></image>
+  </view>
+  <!-- 选择速率暂时无效 -->
+  <!-- <view class="btn-play-rate" bindtap="switchPlayRate">{{curPlayRate}}X</view> -->
+</view>
+<!-- 到这里 -->
+
+
+<view class="yipaianniu">
+  <button wx:if="{{isPlay==false}}" bindtap="play" size="mini" plain="ture"
+    style="float:left;margin-left: 200rpx;">开始</button>
+  <button wx:elif="{{isPlay==true}}" bindtap="pause" size="mini" plain="ture"
+    style="float:left;margin-left: 200rpx;">暂停</button>
+  <button bindtap="stop" size="mini" plain="ture" style="float:right;margin-right: 200rpx;">停止</button>
+</view>
+
+
+<button bindtap="fenxiang" open-type="share"
+  style="width:60rpx;height:65rpx;float:right;margin-top:20rpx;margin-right: 20rpx;   background: #ededed;">
+  <image open-type="share" src="/icon/fenxiang2.png" class="xiangmu1b">
+  </image>
+</button>
+<view class="anniu">
+  <button bindtap="xiazai" size="mini" plain="ture" class="anniu">进阶跑下载</button>
+</view>
+<view class="adContainer">
+  <ad unit-id="adunit-54b9226f03fb6413" ad-intervals="30" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+</view>

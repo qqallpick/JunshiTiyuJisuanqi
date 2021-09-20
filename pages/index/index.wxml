@@ -1,0 +1,577 @@
+<wxs module="filter" src="./index.wxs"></wxs>
+<wxs module="filters" src="./filters.wxs"></wxs>
+<view class="zhenggeyemian">
+  <view class="viewding"></view>
+
+  <view class="viewshouhang">
+    <view class="viewtxcj2">体型成绩</view>
+    <view class="viewtxcj" wx:if="{{agez <16 || weight< 0 || height <= 0}}">0.0</view>
+    <view class="viewtxcj" wx:elif="{{height > 0}}">{{filter.numberToFixed((weight)/[(height/100)*(height/100)])}}
+    </view>
+    <view class="view2" wx:if="{{agez <16 || weight< 0 || height < 0}}">
+      不合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >=0 && agez <= 24 && sexindex == 0 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 25.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 25 && agez <=29 && sexindex == 0 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 26.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 30 && agez <=39 && sexindex == 0 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 27.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 40 && agez <= 49 && sexindex == 0 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 28.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 50 && agez <= 59 && sexindex == 0 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 29.4  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 60 && sexindex == 0 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 29.9  }}">
+      合格 </view>
+
+    <view class="view2"
+      wx:elif="{{agez >= 0 && agez <= 24 && sexindex == 1 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 23.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 25 && agez <=29 && sexindex == 1 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 24.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 30 && agez <=39 && sexindex == 1 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 25.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 40 && agez <= 49 && sexindex == 1 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 26.9  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 50 && agez <= 59 && sexindex == 1 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 27.4  }}">
+      合格 </view>
+    <view class="view2"
+      wx:elif="{{agez >= 60 && sexindex == 1 && filter.numberToFixed((weight)/[(height/100)*(height/100)])>= 18.5 && filter.numberToFixed((weight)/[(height/100)*(height/100)]) <= 27.9  }}">
+      合格 </view>
+    <view class="view2" wx:else> 不合格 </view>
+
+  </view>
+
+  <view class="zongtichengji">
+    <view wx:if="{{index==0}}">
+      <view class="viewzongchengji2a">总成绩</view>
+      <view class="viewzongchengji2"> {{yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz}}
+      </view>
+    </view>
+    <view wx:elif="{{index==1 && agez<40}}">
+      <view class="viewzongchengji2a">总成绩</view>
+      <view class="viewzongchengji2"> {{qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz}}
+      </view>
+    </view>
+    <view wx:elif="{{index==1 && agez>=40}}">
+      <view class="viewzongchengji2a">总成绩</view>
+      <view class="viewzongchengji2"> {{yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz}}
+      </view>
+    </view>
+    <!-- 评级 -->
+    <view>
+      <!-- 男性 二类人员-->
+      <view
+        wx:if="{{peopleindex==1 && index==0 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<240|| yintichengjiz <60 || yangwoqizuochengjiz <60 || sanshimichengjiz <60 ||  sangonglichengjiz <60 }}" class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=240 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<320}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=320 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<360}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=360 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 女性小于40二类人员 -->
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<240 || qubichengjiz <60 || yangwoqizuochengjiz <60 || sanshimichengjiz <60 || sangonglichengjiz <60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=240 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<320}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=320 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<360}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=360 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1&& agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 女性大于40二类人员 -->
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez>=40 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<240 || yintichengjiz <60 || yangwoqizuochengjiz <60 || sanshimichengjiz <60 || sangonglichengjiz <60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1  && agez>=40 &&   (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=240 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<320}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=320 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<360}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=360 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez>=40&&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez>=40 &&   (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==1 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 男性 一类人员-->
+      <view
+        wx:elif="{{peopleindex==0 && index==0 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<260 || yintichengjiz <60 || yangwoqizuochengjiz <60 || sanshimichengjiz <60 || sangonglichengjiz <60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=260 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<340}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=340 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<380}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=380 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 女性小于40一类人员 -->
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<260 || qubichengjiz <60 || yangwoqizuochengjiz <60 || sanshimichengjiz  <60 ||  sangonglichengjiz <60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=260 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<340}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=340 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<380}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=380 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1&& agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 女性大于40一类人员 -->
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez>=40 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<260 || yintichengjiz <60|| yangwoqizuochengjiz <60|| sanshimichengjiz <60|| sangonglichengjiz <60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1  && agez>=40 &&   (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=260 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<340}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=340 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<380}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=380 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez>=40&&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez>=40 &&   (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==0 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 男性 三类人员-->
+      <view
+        wx:elif="{{peopleindex==2 && index==0 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<220 || yintichengjiz < 60 || yangwoqizuochengjiz < 60 || sanshimichengjiz < 60 || sangonglichengjiz < 60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=220 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<300}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=300 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<340}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=340 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==0 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 女性小于40三类人员 -->
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<220 || qubichengjiz <60 || yangwoqizuochengjiz  <60 ||  sanshimichengjiz  <60 ||  sangonglichengjiz <60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=220 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<300}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=300 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<340}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=340 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1&& agez<40 &&  (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez<40 && (qubichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+      <!-- 女性大于40三类人员 -->
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez>=40 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<220 || yintichengjiz < 60|| yangwoqizuochengjiz < 60||  sanshimichengjiz < 60||  sangonglichengjiz < 60}}"
+        class="viewzongchengji2c">
+        不及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1  && agez>=40 &&   (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=220 && (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<300}}"
+        class="viewzongchengji2c">
+        及格
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=300 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<340}}"
+        class="viewzongchengji2c">
+        良好
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=340 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<440}}"
+        class="viewzongchengji2c">
+        优秀
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez>=40&&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=440 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<480}}"
+        class="viewzongchengji2c">
+        特3
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez>=40 &&   (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=480 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)<500}}"
+        class="viewzongchengji2c">
+        特2
+      </view>
+      <view
+        wx:elif="{{peopleindex==2 && index==1 && agez>=40 &&  (yintichengjiz + yangwoqizuochengjiz + sanshimichengjiz + sangonglichengjiz)>=500}}"
+        class="viewzongchengji2c">
+        特1
+      </view>
+    </view>
+  </view>
+
+  <view class="xingbiedakuang">
+    <view class="view1q">
+      <picker bindchange="pickChangesex" value="" data-value="sexindex" range="{{sexarray}}">
+        <view>性别：{{sexarray[index]?sexarray[index]:sexarray[0]}}</view>
+      </picker>
+    </view>
+    <view class="view1">
+      <picker bindchange="pickChangepeople" value="{{peopleindex}}" data-value="peopleindex" range="{{people}}">
+        <view>类别：{{people[peopleindex]?people[peopleindex]:people[1]}}</view>
+      </picker>
+    </view>
+    <view class="view1b">
+      <view class="view1sga">年龄：</view>
+      <view class="view1sg"> <input placeholder="输入" bindinput="ageinput" type="number" value="" maxlength="2"
+          confirm-type="done"></input></view>
+      <view class="view1s">岁</view>
+    </view>
+  </view>
+
+  <view class="shengao">
+    <view class="shengao1">身　　高：</view>
+    <input class="shengao2" placeholder=" " bindinput="heightinput" value="" maxlength="3" type="number"
+      confirm-type="done">
+    </input>
+    <view class="shengao3">厘米</view>
+  </view>
+  <view class="tizhong">
+    <view class="tizhong1">体　　重：</view>
+    <input class="tizhong2" placeholder=" " bindinput="weightinput" value="" maxlength="3" type="number"
+      confirm-type="done">
+    </input>
+    <view class="tizhong3">千克</view>
+  </view>
+
+  <view class="jiangequkuai2"></view>
+
+  <view class="yinti" wx:if="{{agez < 40 && index == 0}}">
+    <view class="yinti1">引体向上：</view>
+    <input class="yinti2" placeholder=" " bindinput="yintiinput" value="" maxlength="2" type="number"
+      confirm-type="done">
+    </input>
+    <view class="yinti3">个</view>
+    <view class="yinti4">{{yintichengjiz}}分</view>
+  </view>
+
+  <view class="fuwocheng" wx:if="{{agez >= 40 && index == 0}}">
+    <view class="fuwocheng1">俯卧撑：</view>
+    <input class="fuwocheng2" placeholder=" " bindinput="yintiinput" value="" maxlength="2" type="number"
+      confirm-type="done">
+    </input>
+    <view class="fuwocheng3">个</view>
+    <view class="fuwocheng4">{{yintichengjiz}}分</view>
+  </view>
+
+  <view class="qubi" wx:if="{{agez < 40 && index == 1}}">
+    <view class="qubi1">屈臂悬垂：</view>
+    <picker class="qubi2" bindchange="pickqubi" value="" data-value="qubishu" range="{{qubi}}">
+      <view class="qubi2">{{qubishu}}</view>
+    </picker>
+    <view class="qubi3">秒</view>
+    <view class="qubi4">{{qubichengjiz}}分</view>
+  </view>
+
+  <view class="fuwocheng" wx:if="{{agez >= 40 && index == 1}}">
+    <view class="fuwocheng1">俯卧撑：</view>
+    <input class="fuwocheng2" placeholder=" " bindinput="yintiinput" value="" maxlength="2" type="number"
+      confirm-type="done">
+    </input>
+    <view class="fuwocheng3">个</view>
+    <view class="fuwocheng4">{{yintichengjiz}}分</view>
+  </view>
+
+  <view class="yangwoqizuo">
+    <view class="yangwoqizuo1">仰卧起坐：</view>
+    <input class="yangwoqizuo2" placeholder=" " bindinput="yangwoqizuoinput" value="" maxlength="3" type="number"
+      confirm-type="done">
+    </input>
+    <view class="yangwoqizuo3">个</view>
+    <view class="yangwoqizuo4">{{yangwoqizuochengjiz}}分</view>
+  </view>
+
+  <view class="shexingpao">
+    <view class="shexingpao1">30米×2跑：</view>
+    <picker class="shexingpao2" mode="multiSelector" bindchange="bindsanshimi" value="{{sanshimi}}"
+      range="{{sanshimi}}">
+      {{index5}}.{{index6}}</picker>
+    <view class="shexingpao3">秒</view>
+    <view class="shexingpao4">{{sanshimichengjiz}}分</view>
+  </view>
+
+  <view class="sangongli">
+    <view class="sangongli1">3000米跑：</view>
+    <picker class="sangongli2" mode="multiSelector" bindchange="bindsangongli" value="{{sangongli}}"
+      range="{{sangongli}}">
+      {{index1}}　　分　　{{index2}}</picker>
+    <view class="sangongli3">秒</view>
+    <view class="sangongli4">{{sangonglichengjiz}}分</view>
+  </view>
+
+  <view class="jiangequkuai3"></view>
+
+
+  <view>
+
+    <view class="baocun">
+      <button style="width:350rpx;height:60rpx;border-radius:20rpx;background:#2F4F4F;color:white;font-weight:500;"
+        bindtap="dianzan">点赞</button>
+    </view>
+    <!-- <view class="baocun">
+      <button wx:if="{{canIUse}}"
+        style="width:350rpx;height:60rpx;border-radius:20rpx;background:#2F4F4F;color:white;font-weight:500;"
+        open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">保存成绩</button>
+      <view wx:else class="baocun1">请升级微信版本</view>
+    </view>
+    <view class="chaxun">
+      <button bindtap="getdata"
+        style="width:350rpx;height:60rpx;border-radius:20rpx;background:#2F4F4F;color:white;font-weight:500;">查询成绩</button>
+    </view> -->
+
+  </view>
+  <view class="dianzanshuliang">有{{dianzanshu}}人点赞了！</view>
+  <!-- 分享按钮 -->
+  <!-- <view class="fenxiang">
+  <button bindtap="fenxiang" open-type="share"
+    style="width:60rpx;height:65rpx;float:right;margin-top:50rpx;margin-right:20rpx;background: #ededed;margin-bottom:50rpx">
+    <image open-type="share" src="/icon/fenxiang2.png" class="xiangmu1b">
+    </image>
+  </button>
+</view> -->
+  <view wx:for="{{datalist}}" wx:key="timevar">
+    <view class="xianshichaxun">
+      <view class="cxxingming">
+        <view class="cxxingming1"> 姓　　名：{{item.name}}</view>
+        <image class="cxxingming2" src='{{item.touxiang}}'></image>
+      </view>
+      <view class="cxxingbie">
+        <view class="cxxingbie1">性　　别：{{chaxunxingbie}}</view>
+      </view>
+      <view class="cxleibie">
+        <view class="cxleibie1">人员类别：{{chaxunleibie}}</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">年　　龄：{{item.nianling}}岁</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">身　　高：{{item.shengao}}厘米</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">体　　重：{{item.tizhong}}千克</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">引体向上：{{item.yinti}}个</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">俯卧撑：　{{item.fuwocheng}}个</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">屈臂悬垂：{{item.qubi}}秒</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">仰卧起坐：{{item.yangwoqizuo}}个</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">30米×2跑：{{item.shexingpao}}秒</view>
+      </view>
+      <view class="cxnianling">
+        <view class="cxnianling1">3000米跑：{{filter.numberToFixeda( item.sangongli / 60 )}}分{{item.sangongli % 60}}秒
+        </view>
+      </view>
+      <view class="cxshijian">
+        <view class="cxshijian1">记录时间：<text class="shijian">{{item.bjtimevar}}</text></view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<view class="adContainer">
+  <ad unit-id="adunit-84c94279de60d580" ad-intervals="30" bindload="adLoad" binderror="adError" bindclose="adClose">
+  </ad>
+</view>

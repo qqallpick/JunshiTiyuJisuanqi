@@ -1,0 +1,9 @@
+// 取整数
+var filters = {
+  toFix: function (value) {
+    return parseFloat(value)
+  }
+}
+module.exports = {
+  toFix: filters.toFix
+}

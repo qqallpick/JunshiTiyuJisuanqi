@@ -1,0 +1,5 @@
+<view class='view_img' >
+<image class='zanshang' bindtap="previewImage" src='{{scene}}'></image></view>
+<view class='zanshang1'>
+  <view class="zanshang2">点击图片长按识别二维码</view>
+</view>

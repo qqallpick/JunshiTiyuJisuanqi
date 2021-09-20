@@ -1,0 +1,11 @@
+.viewding {
+  /* border-radius:30rpx; */
+  width: 750rpx;
+  height: 70rpx;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  /* float: left;  */
+  background: -webkit-linear-gradient(top, #2F4F4F, #ffffff);
+  color: #555555;
+}

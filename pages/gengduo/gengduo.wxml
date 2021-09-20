@@ -1,0 +1,70 @@
+<view class="viewding"></view>
+<official-account style="float:left;margin-top:20rpx;margin-bottom:20rpx;"></official-account>
+
+
+<view class="biaoti">
+  <view class="biaotineirong">基于最新标准精准定制</view>
+</view>
+<view class="xiangmu1">
+  <image bindtap="jinjiepaoyinyue"
+    src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/jinjiepao.png" class="xiangmu1a">
+  </image>
+  <button bindtap="jinjiepaoyinyue"
+    style="width:200rpx;height:80rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;border-radius: 30rpx 0rpx 0rpx 30rpx;">进阶跑</button>
+</view>
+<view class="xiangmu2">
+  <image bindtap="gedoushu"
+    src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/gedoushu.png" class="xiangmu1a">
+  </image>
+  <button bindtap="gedoushu"
+    style="width:200rpx;height:80rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;">格斗术</button>
+</view>
+
+<view class="xiangmu3">
+  <button open-type="contact" bindcontact="handleContact"
+    style="width:220rpx;height:220rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;border-radius: 0rpx 30rpx 30rpx 0rpx;">
+    <image bindcontact="handleContact"
+      src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/kefu.png" class="xiangmu1b">
+    </image>
+    <view style="float：left；width:200rpx;height:80rpx;background:#2f4F4F;color:white;font-weight:500;margin-top: 18rpx;">客服</view>
+  </button>
+</view>
+
+<view class="xiangmu4">
+  <image bindtap="zanshang"
+    src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/zanshang.png" class="xiangmu1a">
+  </image>
+  <button bindtap="zanshang"
+    style="width:200rpx;height:80rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;border-radius: 30rpx 0rpx 0rpx 30rpx;">赞赏</button>
+</view>
+<view class="xiangmu5">
+  <image bindtap="guanzhu"
+    src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/guanzhu.png" class="xiangmu1a">
+  </image>
+  <button bindtap="guanzhu"
+    style="width:200rpx;height:80rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;">关注</button>
+</view>
+<view class="xiangmu6">
+  <button bindtap="fenxiang" open-type="share"
+    style="width:220rpx;height:220rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;border-radius: 0rpx 30rpx 30rpx 0rpx;">
+    <image open-type="share"
+      src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/fenxiang.png"
+      class="xiangmu1b">
+    </image>
+    <view
+      style="float：left；width:200rpx;height:80rpx;background:#2f4F4F;color:white;font-weight:500;margin-top: 18rpx;">分享
+    </view>
+  </button>
+</view>
+
+
+<!-- <view class="biaoti2">
+  <view class="biaotineirong2" bindtap="gaoyuanban">☞高原地区通用科目成绩评定</view>
+</view> -->
+
+
+
+<view class="adContainer">
+  <ad unit-id="adunit-76628038f9017aca" ad-intervals="30" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+</view>
+

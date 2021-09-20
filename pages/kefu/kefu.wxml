@@ -1,0 +1,221 @@
+<view class="quanbuzitiyanse">
+
+  <view class="viewding"></view>
+  <view class="biaoti">
+  <view class="biaotineirong">标准对照表</view>
+</view>
+  <view class="pingjibiaozhun">
+    <text class="text1">　</text>
+  </view>
+
+  <view class="pingjibiaozhun2">
+    <text wx:if="{{apprenyuanleibie==0 && appxingbie==0}}" class="text2">人员类别：一类　性别：男　年龄：{{appnianling}}</text>
+    <text wx:elif="{{apprenyuanleibie==1 && appxingbie==0}}" class="text2">人员类别：二类　性别：男　年龄：{{appnianling}}</text>
+    <text wx:elif="{{apprenyuanleibie==2 && appxingbie==0}}" class="text2">人员类别：三类　性别：男　年龄：{{appnianling}}</text>
+    <text wx:elif="{{apprenyuanleibie==0 && appxingbie==1}}" class="text2">人员类别：一类　性别：女　年龄：{{appnianling}}</text>
+    <text wx:elif="{{apprenyuanleibie==1 && appxingbie==1}}" class="text2">人员类别：二类　性别：女　年龄：{{appnianling}}</text>
+    <text wx:elif="{{apprenyuanleibie==2 && appxingbie==1}}" class="text2">人员类别：三类　性别：女　年龄：{{appnianling}}</text>
+  </view>
+
+  <!-- 评级标准 -->
+  <view>
+    <view wx:if="{{apprenyuanleibie==0}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/1leibiaozhun.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{apprenyuanleibie==1}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/2leibiaozhun.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{apprenyuanleibie==2}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/3leibiaozhun.png"
+        mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- 体型标准 -->
+  <view>
+    <view wx:if="{{appnianling<=24}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/tx24.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appnianling>=25 && appnianling<=29}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/tx25.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appnianling>=30 && appnianling<=39}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/tx30.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appnianling>=40 && appnianling<=49}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/tx40.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appnianling>=50 && appnianling<=59}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/tx50.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appnianling>=60}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/tx60.png"
+        mode="widthFix"></image>
+    </view>
+  </view>
+
+
+
+
+
+  <!-- 其他标准 -->
+  <view>
+    <view wx:if="{{appxingbie==0 && appnianling<=24}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/240.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=25 && appnianling<=27}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/250.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=28 && appnianling<=30}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/280.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=31 && appnianling<=33}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/310.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=34 && appnianling<=36}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/340.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=37 && appnianling<=39}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/370.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=40 && appnianling<=42}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/400.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=43 && appnianling<=45}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/430.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=46 && appnianling<=48}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/460.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=49 && appnianling<=51}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/490.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=52 && appnianling<=54}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/520.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=55 && appnianling<=57}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/550.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=58 && appnianling<=60}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/580.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==0 && appnianling>=61}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/580.png"
+        mode="widthFix"></image>
+    </view>
+    <!-- 女性的标准 -->
+    <view wx:elif="{{appxingbie==1 && appnianling<=24}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/241.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=25 && appnianling<=27}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/251.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=28 && appnianling<=30}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/281.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=31 && appnianling<=33}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/311.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=34 && appnianling<=36}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/341.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=37 && appnianling<=39}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/371.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=40 && appnianling<=42}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/401.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=43 && appnianling<=45}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/431.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=46 && appnianling<=48}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/461.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=49 && appnianling<=51}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/491.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=52 && appnianling<=54}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/521.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=55 && appnianling<=57}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/551.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=58 && appnianling<=60}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/581.png"
+        mode="widthFix"></image>
+    </view>
+    <view wx:elif="{{appxingbie==1 && appnianling>=61}}" class="pingjibiaozhun">
+      <image src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/581.png"
+        mode="widthFix"></image>
+    </view>
+  </view>
+  <button bindtap="fenxiang" open-type="share"
+    style="width:60rpx;height:65rpx;float:right;margin-top:20rpx;margin-right: 20rpx;   background: #ffffff;margin-bottom:50rpx">
+    <image open-type="share"
+      src="/icon/fenxiang2.png"
+      class="xiangmu1b">
+    </image>
+  </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <view class="">
+
+
+<text>点击“联系客服”按钮，向开发者提供宝贵意见，留言都会及时回复。：）</text>
+
+</view> -->
+
+
+ 
+</view>
+
+
+<view class="adContainer">
+  <ad unit-id="adunit-8806e0cb75646565" ad-intervals="30" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+</view>

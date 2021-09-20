@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/kefu/kefu",
+    "pages/gengduo/gengduo",
+    "pages/jinjiepao/jinjiepao",
+    "pages/gedoushu/gedoushu",
+    "pages/gongzhonghao/gongzhonghao",
+    "pages/zanshang/zanshang",
+    "pages/liuyan/liuyan"
+  ],
+
+
+
+
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#000000"
+  },
+  
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "体能计算",
+        "iconPath": "icon/zhuye2.png",
+        "selectedIconPath": "icon/zhuye.png"
+      },
+      {
+        "pagePath": "pages/kefu/kefu",
+        "text": "查看标准",
+        "iconPath": "icon/mine2.png",
+        "selectedIconPath": "icon/mine1.png"
+      },
+      {
+        "pagePath": "pages/gengduo/gengduo",
+        "text": "更多内容",
+        "iconPath": "icon/yinyue2.png",
+        "selectedIconPath": "icon/yinyue.png"
+      }
+    ],
+    "color": "#a9a9a9",
+    "selectedColor": "#2F4F4F"
+
+
+
+  },
+
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+
+
+
+
+
+
+}

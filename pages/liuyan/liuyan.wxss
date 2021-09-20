@@ -1,0 +1,136 @@
+page {
+  background: #ededed;
+}
+
+.viewding {
+  /* border-radius:30rpx; */
+  width: 750rpx;
+  height: 70rpx;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  /* float: left;  */
+  background: -webkit-linear-gradient(top, #2F4F4F, #ededed);
+  color: #555555;
+}
+
+.liuyanqu {
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  float: left;
+  width: 710rpx;
+  height: 370rpx;
+  background: rgb(207, 201, 201);
+  border: black 2rpx;
+  box-shadow: 5rpx 5rpx #708090;
+  border-radius: 20rpx; 
+  
+}
+
+.shurukuang {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  float: left;
+  width: 670rpx;
+  height: 250rpx;
+  background: #ffffff;
+  border-radius: 20rpx; 
+}
+
+.qingkong {
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  float: left;
+  width: 175rpx;
+  height: 50rpx;
+  background: rgb(207, 201, 201);
+  text-align: center;
+
+}
+
+.fabiao {
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+  float: right;
+  width: 475rpx;
+  height: 50rpx;
+  background: rgb(207, 201, 201);
+  text-align: center;
+}
+
+.zhanshiqu {
+  margin-bottom: 50rpx;
+  float: left;
+ 
+}
+
+.tiezi {
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  float: left;
+  width: 710rpx;
+  height: 450rpx;
+  background: rgb(207, 201, 201);
+  border: black 2rpx;
+  box-shadow: 5rpx 5rpx #708090;
+  border-radius: 20rpx; 
+}
+
+.cxxingming {
+  width: 710rpx;
+  height: 140rpx;
+  background-color: #2F4F4F;
+  /* border-radius: 10px 10px 0px 0px; */
+  /* box-shadow: 5rpx 5rpx #708090; */
+  /* margin-bottom: 2rpx; */
+  border-radius: 20rpx 20rpx 0rpx 0rpx; 
+}
+
+.cxxingming1 {
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  float: left;
+  background-color: #2F4F4F;
+  width: 450rpx;
+  height: 50rpx;
+  color: #ededed;
+}
+
+.shijian1 {
+  width: 450rpx;
+  height: 50rpx;
+  float: left;
+  background-color: #2F4F4F;
+  font-size: 20rpx;
+  margin-left: 30rpx;
+  margin-bottom: 5rpx;
+  color: #ededed;
+}
+
+.cxxingming2 {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left:100rpx;
+  margin-top: 20rpx;
+  
+  border-radius: 20rpx;
+  background-color: chartreuse;
+
+}
+
+.neirong {
+  width: 650rpx;
+  height: 100rpx;
+  float: left;
+  margin-top: 5rpx;
+  margin-left: 30rpx;
+
+
+}
+
+
+.adContainer {
+  width: 100%;
+  margin-top: 50rpx;
+  float: left;
+}

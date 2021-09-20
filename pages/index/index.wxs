@@ -1,0 +1,15 @@
+// 保留一位小数
+var filter = {
+	numberToFixed: function(value){
+		return value.toFixed(1)
+	},
+	numberToFixeda: function(value){
+		return value.toFixed(0)
+	}
+}
+module.exports = {
+	numberToFixed: filter.numberToFixed,
+	numberToFixeda: filter.numberToFixeda
+}
+
+

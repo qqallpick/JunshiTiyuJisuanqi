@@ -1,0 +1,84 @@
+/* pages/gengduo/gengduo.wxss */
+
+page {
+  background: #ededed;
+}
+.tupian{
+  width: 750rpx;
+  height:400rpx;
+background-color: black;
+
+}
+.tupian1{
+  width: 600rpx;
+  height:400rpx;
+margin-left: 75rpx;
+
+}
+.jindutiao{
+  width: 750rpx;
+  float: left;
+  background-color: rgb(0, 77, 100);
+}
+.progress {width: 750rpx; height:10rpx; width:4rpx; background:#df6310; color: rgb(211, 68, 25);float: left; }
+.audioPlayer { width: 750rpx; height:98rpx; display: flex; justify-content: space-around; align-items: center;  box-shadow:0rpx 0rpx 0rpx 0rpx #941212;float: left;   background: -webkit-linear-gradient(top, #2F4F4F, #12978c);}
+
+.btn-play { position: relative;  bottom:00rpx; display: flex; justify-content: center; align-items: center; width:100rpx; height:100rpx; overflow: hidden;border-radius: 100%; }
+.btn-bg {position: absolute;top:0; left:0;  width:100rpx; height:100rpx;border-radius: 100%; }
+.roate { animation:turn 5s linear infinite;}
+@keyframes turn{
+      0%{-webkit-transform:rotate(0deg);}
+      25%{-webkit-transform:rotate(90deg);}
+      50%{-webkit-transform:rotate(180deg);}
+      75%{-webkit-transform:rotate(270deg);}
+      100%{-webkit-transform:rotate(360deg);}
+    }
+.icon-caret-right,.icon-pause { font-size:72rpx; color:rgb(202, 18, 18);}
+.btn-switch-accent { position: relative; top:-4rpx; }
+.btn-play-rate { font-family:  Arial, Helvetica, sans-serif}
+.viewding {
+  /* border-radius:30rpx; */
+  width: 750rpx;
+  height: 70rpx;
+  float: left;
+
+  /* float: left;  */
+  background: -webkit-linear-gradient(top, #2F4F4F, #ffffff);
+  color: #555555;
+}
+.yipaianniu{
+  width: 750rpx;
+  float: left;
+  margin-top: 20rpx;
+}
+.anniu{
+  margin-top: 50rpx;
+  float: left;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 140rpx;
+}
+.ad{
+  text-align: center;
+  width: 750rpx;
+  height:200rpx;
+  margin-top: 50rpx;
+  /* background-color: #2F4F4F; */
+}
+.xiangmu1b{
+  width:45rpx;
+  height:50rpx;
+  float: left;
+  background: #ededed;
+
+}
+.jinjiepaoxiazai{
+  width: 750rpx;
+  float: left;
+}
+.adContainer {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}

@@ -1,0 +1,33 @@
+.zanshang {
+  width: 750rpx;
+  height: 750rpx;
+  float: left;
+}
+
+.zanshang1 {
+  width: 750rpx;
+  height: 100rpx;
+  float: left;
+
+}
+
+.zanshang2 {
+  width: 450rpx;
+  height: 50rpx;
+  float: left;
+  margin-left: 200rpx;
+  margin-top: 30rpx;
+  font-family: 黑体;
+}
+
+.viewding {
+  /* border-radius:30rpx; */
+  width: 750rpx;
+  height: 70rpx;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  /* float: left;  */
+  background: -webkit-linear-gradient(top, #2F4F4F, #ffffff);
+  color: #555555;
+}
