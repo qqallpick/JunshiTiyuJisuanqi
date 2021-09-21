@@ -703,8 +703,8 @@ page {
 .dianzanshuliang{
   float: left;
   margin-top: 20rpx;
-  margin-left: 60rpx;
-  width: 300rpx;
+  margin-left: 100rpx;
+  width: 200rpx;
   /* background-color: rgb(119, 0, 255);  */
   color: rgb(124, 117, 118);
 }

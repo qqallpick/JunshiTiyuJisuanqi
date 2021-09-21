@@ -501,7 +501,7 @@
 
     <view class="baocun">
       <button style="width:350rpx;height:60rpx;border-radius:20rpx;background:#2F4F4F;color:white;font-weight:500;"
-        bindtap="dianzan">点赞</button>
+        bindtap="dianzan">点　赞</button>
     </view>
     <!-- <view class="baocun">
       <button wx:if="{{canIUse}}"
@@ -515,7 +515,7 @@
     </view> -->
 
   </view>
-  <view class="dianzanshuliang">有{{dianzanshu}}人点赞了！</view>
+  <view class="dianzanshuliang">点赞数{{dianzanshu}}</view>
   <!-- 分享按钮 -->
   <!-- <view class="fenxiang">
   <button bindtap="fenxiang" open-type="share"

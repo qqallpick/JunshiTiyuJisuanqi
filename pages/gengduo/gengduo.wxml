@@ -38,11 +38,11 @@
     style="width:200rpx;height:80rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;border-radius: 30rpx 0rpx 0rpx 30rpx;">赞赏</button>
 </view>
 <view class="xiangmu5">
-  <image bindtap="guanzhu"
-    src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/guanzhu.png" class="xiangmu1a">
+  <image bindtap="kuaimi"
+    src="cloud://junshixunlianchengji-86wg6.6a75-junshixunlianchengji-86wg6-1303113678/ic_launcher.png" class="xiangmu1a">
   </image>
-  <button bindtap="guanzhu"
-    style="width:200rpx;height:80rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;">关注</button>
+  <button bindtap="kuaimi"
+    style="width:200rpx;height:80rpx;background:#2F4F4F;color:white;font-weight:500;margin-top: 1rpx;">快密</button>
 </view>
 <view class="xiangmu6">
   <button bindtap="fenxiang" open-type="share"
